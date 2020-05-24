@@ -20,7 +20,13 @@ export default class D3Chart {
             .attr("y", 50)
             .attr("width", 50)
             .attr("height", d => d.age * 10)
-            .attr("fill", "grey")
+            .attr("fill", d => {
+                if (d.name === "Tony") {
+                    return "red"
+                }else {
+                    return "green"
+                }
+            })
 
         // data.forEach((d,i) => {
         //     svg.append("rect")
