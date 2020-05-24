@@ -23,9 +23,8 @@ export default class D3Chart {
             .attr("fill", d => {
                 if (d.age > 10) {
                     return "red"
-                }else {
-                    return "green"
                 }
+                return "green"
             })
 
         // data.forEach((d,i) => {
