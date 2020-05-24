@@ -1,6 +1,7 @@
 import * as d3 from 'd3'
 
 const data = [20, 12, 16, 25, 20];
+const url = "https://udemy-react-d3.firebaseio.com/ages.json";
 
 export default class D3Chart {
     constructor(element){
@@ -9,6 +10,10 @@ export default class D3Chart {
             .attr("width", 500)
             .attr("height", 500)
 
+      d3.json(url).then(agesData => {
+          console.log(agesData)
+      })
+      
       const rects = svg.selectAll("rect")   // all rect on the screen
             .data(data)
 
